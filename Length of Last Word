@@ -1,0 +1,25 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+      int count =0;
+      if(s.length()==0){
+          return count;
+      }
+        int currLength = s.length()-1;
+        // remove extra space from end
+        while(currLength>0)
+        {
+            if(s.charAt(currLength)!= ' ')
+                break;
+            currLength--;
+        }
+        for(int i=currLength;i>=0;i--)
+        {
+            if(s.charAt(i) == ' ')
+                break;
+            count++;
+        }
+        return count;
+        
+        
+    }
+}
